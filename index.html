@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" >
+        <title> Universidad de Guadalajara</title>
+        <link type="image/vnd.microsoft.icon" href="/sites/default/files/favicon.ico" rel="shortcut icon">
+        <style type="text/css">
+
+            @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap');
+            
+            .cuentaregresiva{
+                padding-left: 10px; 
+                padding-right: 10px"
+            }
+
+            .timedown{
+                font-size: 30px;
+            }
+
+            body{
+                margin-left: auto;
+                margin-right: auto;
+                font-family: Helvetica, Arial, sans-serif;
+                width: auto;
+            }
+
+            a:link, a:visited{
+                text-decoration: none;  
+            }
+
+            #portal{
+                background: #0071BC;
+                padding: 10px;
+                border-radius: 20px; 
+                -webkit-box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.5);
+                box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.5);  
+                border:2px solid #29A7DD;
+            }
+
+            #portal a{
+                background: #fff;
+                display: block;
+                border-radius: 20px; 
+                padding: 10px 30px;
+                color: #0071BC;
+                -webkit-box-shadow: 0px 6px 12px -4px #000;
+                box-shadow: 0px 6px 12px -4px #000;  
+            }
+
+            .titu{
+                font-size: 26px;
+            }
+
+            #portal a spam{
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            #portal a spam:nth-child(3) {
+                margin: 0;
+            }
+
+            #portal a:hover{
+                -webkit-box-shadow: inset 0px 6px 12px -4px #000;
+                box-shadow: inset 0px 6px 12px -4px #000;  
+            }
+
+
+            #dictamen{
+                background: #00922B;
+                padding: 10px;
+                border-radius: 20px; 
+                -webkit-box-shadow: 0 0 8px 0 #6FFF59;
+                box-shadow: 0 0 8px 0 #6FFF59;
+                border:#fff solid 2px;   
+            }  
+
+            #dictamen a{
+                background: #fff;
+                display: block;
+                border-radius: 20px; 
+                padding: 10px 40px;
+                color: #00922B;
+                -webkit-box-shadow: 0px 6px 12px -4px #000;
+                box-shadow: 0px 6px 12px -4px #000;  
+            }
+
+            #dictamen a:hover{
+                -webkit-box-shadow: inset 0px 6px 12px -4px #000;
+                box-shadow: inset 0px 6px 12px -4px #000;  
+            }
+
+            #dictamen a spam{
+                margin-bottom: 10px;
+                display: block;
+            }
+            #dictamen a spam:nth-child(3) {
+                margin: 0;
+            }
+
+            #content{
+                background: #ffffff; /* Old browsers */
+                background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #d7d7d7 100%); /* FF3.6+ */
+                background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(100%,#d7d7d7)); /* Chrome,Safari4+ */
+                background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 0%,#d7d7d7 100%); /* 
+                background: -o-radial-gradient(center, ellipse cover,  #ffffff 0%,#d7d7d7 100%); /* Opera 12+ */
+                background: -ms-radial-gradient(center, ellipse cover,  #ffffff 0%,#d7d7d7 100%); /* IE10+ */
+                background: radial-gradient(ellipse at center,  #ffffff 0%,#d7d7d7 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d7d7d7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                padding-bottom: 1px;
+            }
+            #contenedor{
+                text-align: center;
+                font-size: 1em;
+            }
+
+            #contenedor > div{
+                display: inline-table;
+                margin: 10px;
+            }
+
+            #encabezado{
+                text-align: center;
+                margin-bottom: 20px;
+                margin-top: 10px;
+            }
+
+            #pie{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background: #FBFBFB;
+                color: #666;
+                text-align: center;
+                box-shadow: 0 10px 10px -10px #ccc;
+                margin-bottom: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            #encabezado img{
+                width: 100%;
+                max-width: 343px; 
+                height: auto;
+                padding-top: 10px;
+            } 
+
+            #liston{
+                background: #fff;
+                height: 69px;
+                text-align: center;
+                padding-top: 10px;
+            }
+
+            /*Código anuncio banner*/
+            #cont-banner{
+                width: 100%;
+                background: #0B2545;
+                color: #fff;
+                font-family: 'Titillium Web', sans-serif;
+            }
+
+            #banner{
+                max-width: 1200px;
+                width: 100%;
+                margin: auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 20px;
+            }
+
+            #banner1 div,
+            #banner2{
+                padding-left: 20px;
+            }
+
+            #banner a{
+                color: #FF6B52;
+                font-weight: bold;
+            }
+
+            #banner1{
+                display: block;
+            }
+
+            #banner1 img{
+                width: 100%;
+                max-width: 525px;
+                height: auto;
+            }
+
+            #banner2{
+                display: block;
+                margin-right: 30px;
+                background: #0B2545;
+                margin-top: 10px;
+            }
+
+            #banner2 ul{
+                max-width: 320px;
+                margin-left: 0px;
+                padding: 0px;
+                margin-top: 10px;
+            }
+
+            #banner2 li{
+                display: inline-block;
+                min-width: 135px;
+                background: url('img/bullock.png') no-repeat left center;
+                padding-left: 10px;
+            }
+
+            .naranja{
+                color: #FF6B52;
+                font-size: 20px;
+            }
+
+            #mas-info{
+                background: #fff;
+                width: 100%;
+                font-size: 20px;
+                text-align: center;
+                min-height: 25px;
+                padding-top: 10px;
+            }
+
+            .mas-info,
+            .facebook,
+            .twitter{
+                display: inline-block;
+                color: #7B0041;
+                padding-left: 30px;
+                min-height: 30px;
+                padding-right: 25px;
+            }
+
+            .mas-info a,
+            .facebook a,
+            .twitter a{
+                color: #0B2545;
+                font-weight: bold;
+            }
+
+            .mas-info{
+                margin-right: 20px;
+            }
+
+            .facebook{
+                background: url('img/facebook.png') no-repeat left top;
+            }
+
+            .twitter{
+                background: url('img/twitter.png') no-repeat left top;
+            }
+            #liston img{
+                width: 273px;
+                height: auto;
+            }
+
+            /*Fin código banner*/
+
+            @media screen and (min-width: 480px){
+                body {
+                    max-width: 480px;
+                    background: #EEEEEE;
+                     }
+
+                     #banner1 div,
+                     #banner2{
+                        padding-left: 90px;
+                     }
+            }
+
+            @media screen and (min-width: 960px){
+                body {
+                         max-width: 960px;
+                     }
+                     #contenedor{
+                         padding-bottom: 100px;
+                         padding-top: 100px;
+                     }
+                     #banner1,
+                     #banner2{
+                        display: inline-block;
+                     }
+
+                     #banner1 div,
+                     #banner2{
+                        padding-left: 0px;
+                     }
+
+                     #banner2{
+                        float: right;
+                     }
+                
+                .cuentaregresiva{
+                    padding-left: 40px; 
+                    padding-right: 40px"
+                }
+
+                .timedown{
+                    font-size: 40px;
+                }
+
+            }
+
+            @media screen and (min-width: 1200px){
+                body {
+                    max-width: 1900px; 
+                     }
+            }
+        </style>
+        <link type="image/vnd.microsoft.icon" href="/sites/default/files/favicon.ico" rel="shortcut icon">
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-143164329-2', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+    </head>
+    <body>
+        <div id="content">
+            <div id="encabezado">
+                <h1><img alt="Universidad de Guadalajara" title="Escudo" src="http://www.gaceta.udg.mx/dictamen2023b-gaceta/logo.png"></h1>
+            </div>
+            <div id="liston">
+                <a href="http://www.gaceta.udg.mx/?f=1"><img alt="La Gaceta" title="Logo" src="http://www.gaceta.udg.mx/dictamen2023b-gaceta/img/logo_gaceta.png"></a>
+            </div>
+            <div id="contenedor">
+                
+                <div><p class="mas-info" style="font-size: 24px">El dictamen de admisión 2023 B, estará disponible en:</p></div><br>
+
+                <div style="display: inline-flex;">
+                    <!--<div class="cuentaregresiva"><span id="days" class="timedown"></span><br> días</div>-->
+                    <div class="cuentaregresiva"><span id="hours" class="timedown"></span><br> horas</div>
+                    <div class="cuentaregresiva"><span id="minutes" class="timedown"></span><br> minutos</div>
+                    <div class="cuentaregresiva"><span id="seconds" class="timedown"></span><br> segundos</div>
+                </div> <br>
+                
+                <!--<div>
+                    <p>
+                        <span id="days" class="titu"></span> días / <span id="hours" class="titu"></span> horas / <span id="minutes" class="titu"></span> minutos / <span id="seconds" class="titu"></span> segundos
+                    </p>
+                </div> <br>-->
+
+                <div id="portal">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><spam class="tuno">Visitar el</spam><spam class="titu">Portal Gaceta.udg.mx</spam><spam class="caqui">Haz click aqu&iacute;</spam></a>
+                </div>
+                <div id="dictamen" style="display: none">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><spam class="tuno">Consultar el</spam><spam class="titu">Dictamen 2023-B</spam><spam class="caqui">Haz click aqu&iacute;</spam></a>
+                </div>
+            </div>
+            <!--Código html banner-->
+            <div id="cont-banner">
+                <div id="banner">
+                    <div id="banner1">
+                        <img alt="Para cuidar el planeta y ahorrar papel" title="Banner" src="http://www.gaceta.udg.mx/dictamen2023b-gaceta/img/banner.png">
+                        <div>El dictamen de admisión 2023-B</div>
+                        <div class="naranja"><strong>No será impreso</strong></div>
+                    </div>
+                    <div id="banner2">
+                        <div> Consulta los resultados desde casa,<br/> <strong>con tu celular o computadora:</strong></div>
+                        <div class="liks">
+                            <ul>
+                                <li><a href="https://www.amazon.com.mx/AOC-C24G1A-pulgadas-compatible-ajustable/dp/B08D3Y5PFZ/ref=asc_df_B08D3Y5PFZ/?tag=gledskshopmx-20&linkCode=df0&hvadid=450970261185&hvpos=&hvnetw=g&hvrand=2049949368437020283&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1010079&hvtargid=pla-1012815327767&th=1">siiau.udg.mx</a>
+                                    </li>
+                                <li><a href="https://www.youtube.com/watch?v=htvYSzoZqVs">udg.mx</a>
+                                    </li>
+                                <li><a href="https://www.youtube.com/watch?v=6E1c1Pf6YSE">escolar.udg.mx</a>
+                                    </li>
+                                <li><a href="https://www.youtube.com/watch?v=O841rfAEQCM">gaceta.udg.mx</a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="mas-info">
+                    <div class="mas-info">Más información: Coordinación de Control Escolar donde hiciste trámites</div>
+                    <div class="facebook">
+                        <a href="https://www.youtube.com/watch?v=_NXrTujMP50">@udg.mx</a>
+                    </div>
+                    <div class="twitter">
+                        <a href="https://twitter.com/CubeCraftGames">@UdG_oficial</a>
+                    </div>
+                </div>
+            </div>
+            <!--Fin código html banner-->
+            <div id="pie">
+            <p>Derechos reservados &copy; 2023. Universidad de Guadalajara.</p>
+            </div>
+        </div>
+
+        <script>
+            //===
+            // VARIABLES
+            //===
+            const DATE_TARGET = new Date('08/09/2023 0:00 AM');
+            // DOM for render
+            const SPAN_DAYS = document.querySelector('span#days');
+            const SPAN_HOURS = document.querySelector('span#hours');
+            const SPAN_MINUTES = document.querySelector('span#minutes');
+            const SPAN_SECONDS = document.querySelector('span#seconds');
+            // Milliseconds for the calculations
+            const MILLISECONDS_OF_A_SECOND = 1000;
+            const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+            const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+            const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+
+            //===
+            // FUNCTIONS
+            //===
+
+            /**
+             * Method that updates the countdown and the sample
+             */
+            function updateCountdown() {
+                // Calcs
+                const NOW = new Date()
+                const DURATION = DATE_TARGET - NOW;
+                const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+                const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+                const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+                const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+                // Thanks Pablo Monteserín (https://pablomonteserin.com/cuenta-regresiva/)
+
+                // Render
+                //SPAN_DAYS.textContent = REMAINING_DAYS;
+                SPAN_HOURS.textContent = REMAINING_HOURS;
+                SPAN_MINUTES.textContent = REMAINING_MINUTES;
+                SPAN_SECONDS.textContent = REMAINING_SECONDS;
+            }
+
+            //===
+            // INIT
+            //===
+            updateCountdown();
+            // Refresh every second
+            setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+
+            // JavaScript Document
+        </script>
+    </body>
+</html>
